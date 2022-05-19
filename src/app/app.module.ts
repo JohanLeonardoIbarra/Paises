@@ -1,18 +1,27 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CardsComponent } from './paises/cards/cards.component';
+import { PaisesService } from './services/paises.service';
+import { NavbarComponent } from './nav/navbar/navbar.component';
+import { ContainerComponent } from './paises/container/container.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CardsComponent,
+    NavbarComponent,
+    ContainerComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    NgbModule
   ],
-  providers: [],
+  providers: [
+    PaisesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
