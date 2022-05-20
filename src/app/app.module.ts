@@ -7,13 +7,15 @@ import { CardsComponent } from './paises/cards/cards.component';
 import { PaisesService } from './services/paises.service';
 import { NavbarComponent } from './nav/navbar/navbar.component';
 import { ContainerComponent } from './paises/container/container.component';
+import { ModalComponent } from './paises/modal/modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardsComponent,
     NavbarComponent,
-    ContainerComponent
+    ContainerComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

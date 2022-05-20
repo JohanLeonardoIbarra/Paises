@@ -8,8 +8,33 @@ import { Pais } from '../../interfaces/Pais.interface';
 })
 export class ContainerComponent{
 
+  private _paises:Pais[] = [];
+  private _modal:[Pais, boolean] = [{
+    name:"",
+    population: 0,
+    flag: ""
+  }, false];
+  private _count:number = 3;
+
   get paises():Pais[]{
-    return this.paisesService.paises;
+    this._paises = this.allPaises;
+    return this._paises.splice(0,this._count);
+  }
+
+  get allPaises():Pais[]{
+    return [...this.paisesService.paises];
+  }
+
+  get modal():[Pais, boolean]{
+    return this._modal;
+  }
+
+  mostrarMas(){
+    this._count+=3;
+  }
+
+  showModal( modal:[Pais, boolean] ){
+    this._modal = modal;
   }
 
   constructor(private paisesService:PaisesService){}

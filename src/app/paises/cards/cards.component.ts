@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { PaisesService } from '../../services/paises.service';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Pais } from '../../interfaces/Pais.interface';
+import { PaisesService } from '../../services/paises.service';
 
 @Component({
   selector: 'app-cards',
@@ -13,9 +13,11 @@ export class CardsComponent{
     flag: ""
   };
 
-  private _default:Pais = {
-    name: "default",
-    population: 0,
-    flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Blank_flag.svg/1280px-Blank_flag.svg.png"
+  @Output() onShowModal:EventEmitter<[Pais, boolean]> = new EventEmitter();
+
+  showModal(){
+    this.onShowModal.emit([this.pais, true]);
   }
+
+  constructor(private paisesService:PaisesService){}
 }

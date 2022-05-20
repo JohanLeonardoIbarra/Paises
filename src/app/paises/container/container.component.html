@@ -1,5 +1,11 @@
 <div class="d-flex justify-content-evenly flex-wrap">
   <div *ngFor="let pais of paises">
-    <app-cards [pais]="pais"></app-cards>
+    <app-cards [pais]="pais" (onShowModal)="showModal( $event )"></app-cards>
   </div>
+  <div class="w-100 d-flex justify-content-center">
+    <button class="btn btn-success" (click)="mostrarMas()">
+      Mostrar más
+    </button>
+  </div>
+  <app-modal [pais]="modal"></app-modal>
 </div>

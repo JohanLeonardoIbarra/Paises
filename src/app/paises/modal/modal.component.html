@@ -1,0 +1,12 @@
+<div *ngIf="pais[1]" class="w-100 margin-50px position-fixed start-0 top-0 justify-content-end custom-modal">
+  <div class="w-75 inner-modal">
+    <div class="w-100 d-flex justify-content-end">
+      <button class="btn btn-danger"(click)="closeModal()">
+        Close
+      </button>
+    </div>
+    <img src="{{ pais[0].flag }}" alt="">
+    <h1 class="text-white fs-1">Pais: {{ pais[0].name }}</h1>
+    <p class="text-white fs-4" >Poblacion: {{ pais[0].population }}</p>
+  </div>
+</div>
