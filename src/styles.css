@@ -15,6 +15,7 @@
   transform: translateX(-50%);
   margin-top: 10vh;
   height: 80vh;
+  width: 75vw;
 }
 
 .custom-modal img{
